@@ -260,7 +260,7 @@ function animateGuess() {
             setTimeout(() => {
                 tile.textContent = guess.phonemes[index];
                 tile.classList.add(guess.feedback[index]);
-            }, REVEAL_DURATION / 2);
+            }, REVEAL_DURATION / 999);
             
             // Start the flip
             tile.classList.add('flip-reveal');
