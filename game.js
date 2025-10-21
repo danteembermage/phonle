@@ -240,16 +240,16 @@ function animateGuess() {
     const REVEAL_DURATION = 600; // ms
 
     // 1. Pre-reveal spin
-   // row.forEach((tile, index) => {
-   //     setTimeout(() => {
-  //         tile.classList.add('flip-pre');
-  //      }, index * PRE_REVEAL_STAGGER);
-//
- //       // Remove class after animation
-  //      setTimeout(() => {
-  //          tile.classList.remove('flip-pre');
-  //      }, index * PRE_REVEAL_STAGGER + PRE_REVEAL_DURATION);
- //   });
+    row.forEach((tile, index) => {
+        setTimeout(() => {
+          tile.classList.add('flip-pre');
+        }, index * PRE_REVEAL_STAGGER);
+
+        // Remove class after animation
+        setTimeout(() => {
+            tile.classList.remove('flip-pre');
+        }, index * PRE_REVEAL_STAGGER + PRE_REVEAL_DURATION);
+    });
     
     // 2. Main reveal (starts after pre-reveal is staggered)
     const totalPreRevealTime = (4 * PRE_REVEAL_STAGGER) + PRE_REVEAL_DURATION;
