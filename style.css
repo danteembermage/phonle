@@ -120,8 +120,8 @@ main {
     transform: rotateX(360deg);
 }
 .tile.flip-reveal {
-    transform: rotateX(180deg);
-    transform: rotateZ(180deg);
+    transform: rotateX(360deg);
+    transform: rotateZ(360deg);
 }
 
 /* Tile color statuses (applied during animation) */
