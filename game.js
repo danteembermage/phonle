@@ -1,4 +1,5 @@
 // --- 1. DOM Elements ---
+const hiddenInput = document.getElementById('hidden-input'); // <-- ADD THIS
 const loadingScreen = document.getElementById('loading-screen');
 const loadingBar = document.getElementById('loading-bar');
 const gameContainer = document.getElementById('game-container');
@@ -44,7 +45,12 @@ window.onload = () => {
     
     // Start listening for input
     window.addEventListener('keydown', handleKeydown);
-    
+    // Focus the hidden input when the user clicks the game
+    gameContainer.addEventListener('click', () => {
+        hiddenInput.focus();
+    });
+    // Handle text input from the virtual (or physical) keyboard
+    hiddenInput.addEventListener('input', handleInput);
     // Start the async loading process
     loadGameData();
 };
@@ -136,10 +142,27 @@ function startGame() {
     updatePhonemeKeyboard();
     hideMessageBox();
     gameState = "playing";
+    hiddenInput.focus(); // <-- ADD THIS
 }
 
 // --- 4. Game Loop & Input ---
+function handleInput(e) {
+    if (gameState !== 'playing') return;
 
+    // Get the typed character (it will be the last one)
+    const char = e.target.value.slice(-1).toUpperCase();
+    
+    // Add it to our guess if it's a letter
+    if (char.match(/^[A-Z]$/)) {
+        currentGuess += char;
+    }
+    
+    // Update the UI
+    updateGuessInput();
+    
+    // CRITICAL: Clear the hidden input immediately so it's ready for the next key
+    e.target.value = "";
+}
 function handleKeydown(e) {
     if (gameState === "over" && e.key === "Enter") {
         startGame();
@@ -152,11 +175,8 @@ function handleKeydown(e) {
         submitGuess();
     } else if (e.key === "Backspace") {
         currentGuess = currentGuess.slice(0, -1);
-    } else if (e.key.match(/^[a-zA-Z]$/)) {
-        currentGuess += e.key.toUpperCase();
+        updateGuessInput(); // Update the UI after backspace
     }
-    
-    updateGuessInput();
 }
 
 function updateGuessInput() {
