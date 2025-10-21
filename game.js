@@ -255,17 +255,17 @@ function animateGuess() {
     const totalPreRevealTime = (4 * PRE_REVEAL_STAGGER) + PRE_REVEAL_DURATION;
     
     row.forEach((tile, index) => {
-        setTimeout(() => {
+        //setTimeout(() => {
             // Set text and color halfway through the flip
-            setTimeout(() => {
-                tile.textContent = guess.phonemes[index];
-                tile.classList.add(guess.feedback[index]);
-            }, REVEAL_DURATION / 0.9);
+        //    setTimeout(() => {
+        //        tile.textContent = guess.phonemes[index];
+        //        tile.classList.add(guess.feedback[index]);
+        //    }, REVEAL_DURATION / 0.9);
             
             // Start the flip
             //tile.classList.add('flip-reveal');
             //tile.classList.add('flip-reveal');
-        }, totalPreRevealTime + index * REVEAL_STAGGER);
+        //}, totalPreRevealTime + index * REVEAL_STAGGER);
     });
     
     // 3. After last animation, check win/loss
