@@ -235,9 +235,9 @@ function animateGuess() {
     const row = gridTiles[currentRow];
     const guess = guesses[currentRow];
     const PRE_REVEAL_STAGGER = 70; // ms
-    const PRE_REVEAL_DURATION = 400; // ms
+    const PRE_REVEAL_DURATION = 140; // ms
     const REVEAL_STAGGER = 200; // ms
-    const REVEAL_DURATION = 600; // ms
+    const REVEAL_DURATION = 400; // ms
 
     // 1. Pre-reveal spin
     row.forEach((tile, index) => {
