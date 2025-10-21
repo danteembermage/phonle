@@ -112,7 +112,7 @@ main {
     
     /* Animation setup */
     transition: transform 0.6s, background-color 0.6s;
-    transform-style: preserve-3d;
+    /*transform-style: preserve-3d;*/
 }
 
 /* Tile flip animations */
