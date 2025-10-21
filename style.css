@@ -62,7 +62,16 @@ header {
     text-align: center;
     border-bottom: 1px solid var(--default-color);
 }
-
+#hidden-input {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    padding: 0;
+}
 #phoneme-keyboard {
     flex-basis: 200px;
     display: flex;
