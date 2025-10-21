@@ -263,8 +263,8 @@ function animateGuess() {
             }, REVEAL_DURATION / 0.9);
             
             // Start the flip
-            tile.classList.add('flip-reveal');
-            tile.classList.add('flip-reveal');
+            //tile.classList.add('flip-reveal');
+            //tile.classList.add('flip-reveal');
         }, totalPreRevealTime + index * REVEAL_STAGGER);
     });
     
