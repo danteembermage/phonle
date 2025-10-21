@@ -117,7 +117,7 @@ main {
 
 /* Tile flip animations */
 .tile.flip-pre {
-    transform: rotateX(360deg);
+    transform: rotateX(90deg);
 }
 .tile.flip-reveal {
     transform: rotateX(90deg);
