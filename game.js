@@ -235,14 +235,14 @@ function animateGuess() {
     const row = gridTiles[currentRow];
     const guess = guesses[currentRow];
     const PRE_REVEAL_STAGGER = 70; // ms
-    const PRE_REVEAL_DURATION = 140; // ms
+    const PRE_REVEAL_DURATION = 400; // ms
     const REVEAL_STAGGER = 200; // ms
-    const REVEAL_DURATION = 400; // ms
+    const REVEAL_DURATION = 600; // ms
 
     // 1. Pre-reveal spin
     row.forEach((tile, index) => {
         setTimeout(() => {
-          tile.classList.add('flip-pre');
+            tile.classList.add('flip-pre');
         }, index * PRE_REVEAL_STAGGER);
 
         // Remove class after animation
@@ -260,11 +260,11 @@ function animateGuess() {
             setTimeout(() => {
                 tile.textContent = guess.phonemes[index];
                 tile.classList.add(guess.feedback[index]);
-            }, REVEAL_DURATION / 0.9);
+            }, REVEAL_DURATION / 2);
             
-             Start the flip
+            // Start the flip
             tile.classList.add('flip-reveal');
-            //tile.classList.add('flip-reveal');
+            
         }, totalPreRevealTime + index * REVEAL_STAGGER);
     });
     
