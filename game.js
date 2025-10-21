@@ -53,7 +53,8 @@ async function loadGameData() {
     // 1. Load frequency list (small, so load all at once)
     const freqResponse = await fetch('frequency.txt');
     const freqText = await freqResponse.text();
-    freqText.split('\n').forEach(word => {
+    freqText.split('\n').forEach(line => {
+        const word = line.trim(); // Add .trim() to remove whitespace and \r
         if (word) frequencySet.add(word.toUpperCase());
     });
     console.log(`Frequency list loaded: ${frequencySet.size} words`);
