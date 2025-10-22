@@ -231,13 +231,13 @@ main {
 
     main {
         /* This holds the grid */
-        order: 1; /* <-- Tell it to appear first */
+        order: 2; /* <-- Tell it to appear first */
         margin-top: 80px; /* Space from header */
     }
 
     #phoneme-keyboard {
         /* This is the phoneme list */
-        order: 2; /* <-- Tell it to appear second, under the grid */
+        order: 1; /* <-- Tell it to appear second, under the grid */
         
         /* Reset desktop styles */
         flex-basis: auto;
