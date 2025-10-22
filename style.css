@@ -205,3 +205,54 @@ main {
 #message-subtext {
     font-size: 16px;
 }
+@media (max-width: 767px) {
+    /* Make tiles and fonts smaller on mobile */
+    :root {
+        --cell-size: 50px; 
+        --cell-margin: 3px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+    
+    #game-container {
+        /* Stack children vertically instead of side-by-side */
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        /* Allow scrolling on tall screens */
+        height: auto;
+        min-height: 100vh;
+    }
+
+    main {
+        /* This holds the grid */
+        order: 1; /* <-- Tell it to appear first */
+        margin-top: 80px; /* Space from header */
+    }
+
+    #phoneme-keyboard {
+        /* This is the phoneme list */
+        order: 2; /* <-- Tell it to appear second, under the grid */
+        
+        /* Reset desktop styles */
+        flex-basis: auto;
+        height: auto;
+        padding-left: 0;
+        
+        /* New horizontal layout */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 500px; /* Try to match the grid width */
+        margin-top: 20px; /* Space from grid */
+        gap: 5px 15px; /* row-gap, column-gap */
+    }
+
+    .key {
+        font-size: 14px;
+        padding: 5px;
+    }
+}
