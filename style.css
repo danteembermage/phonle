@@ -164,7 +164,19 @@ main {
     30%, 50%, 70% { transform: translateX(-4px); }
     40%, 60% { transform: translateX(4px); }
 }
-
+#keyboard-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: var(--default-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100; /* Make sure it's on top */
+}
 /* --- 3. Message Box --- */
 #message-box {
     position: fixed;
