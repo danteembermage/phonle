@@ -1,5 +1,6 @@
 // --- 1. DOM Elements ---
 const hiddenInput = document.getElementById('hidden-input'); // <-- ADD THIS
+const keyboardButton = document.getElementById('keyboard-btn'); // <-- ADD THIS
 const loadingScreen = document.getElementById('loading-screen');
 const loadingBar = document.getElementById('loading-bar');
 const gameContainer = document.getElementById('game-container');
@@ -51,6 +52,11 @@ window.onload = () => {
     });
     // Handle text input from the virtual (or physical) keyboard
     hiddenInput.addEventListener('input', handleInput);
+    keyboardButton.addEventListener('click', (e) => {
+        // Stop the click from also bubbling up to the gameContainer
+        e.stopPropagation(); 
+        hiddenInput.focus();
+    });
     // Start the async loading process
     loadGameData();
 };
