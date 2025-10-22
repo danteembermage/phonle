@@ -211,7 +211,10 @@ main {
         --cell-size: 50px; 
         --cell-margin: 3px;
     }
-
+#guess-input {
+        margin-top: 5px; /* Was 30px by default */
+        font-size: 10px;
+    }
     header h1 {
         font-size: 24px;
     }
@@ -247,7 +250,7 @@ main {
         justify-content: center;
         width: 100%;
         max-width: 500px; /* Try to match the grid width */
-        margin-top: 20px; /* Space from grid */
+        margin-top: 2px; /* Space from grid */
         gap: 5px 15px; /* row-gap, column-gap */
     }
 
