@@ -80,7 +80,7 @@ header {
     height: 400px;
     margin-top: 100px;
     padding-left: 20px;
-    gap: 2px 10px;
+    gap: 2px 11px;
 }
 .key {
     font-size: 16px;
@@ -232,7 +232,7 @@ main {
     main {
         /* This holds the grid */
         order: 2; /* <-- Tell it to appear first */
-        margin-top: 80px; /* Space from header */
+        margin-top: -18px; /* Space from header */
     }
 
     #phoneme-keyboard {
@@ -251,7 +251,7 @@ main {
         width: 100%;
         max-width: 500px; /* Try to match the grid width */
         margin-top: 30x; /* Space from grid */
-        gap: 5px 12px; /* row-gap, column-gap */
+        gap: 5px 11px; /* row-gap, column-gap */
     }
 
     .key {
