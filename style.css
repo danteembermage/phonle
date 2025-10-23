@@ -250,8 +250,8 @@ main {
         justify-content: center;
         width: 100%;
         max-width: 500px; /* Try to match the grid width */
-        margin-top: 2px; /* Space from grid */
-        gap: 5px 15px; /* row-gap, column-gap */
+        margin-top: 30x; /* Space from grid */
+        gap: 5px 12px; /* row-gap, column-gap */
     }
 
     .key {
